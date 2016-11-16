@@ -79,13 +79,11 @@ exports.arraysAnswers = {
   },
 
   duplicates: function(arr) {
-   console.log("This is arr", arr);
    var result = [];
    var hash = {}
 
    arr.forEach(element => {
     if(!hash.hasOwnProperty(element)) {
-      console.log('This is the element', element)
       hash[element] = element
     }else{
       if(!result.includes(element)) {
@@ -93,15 +91,22 @@ exports.arraysAnswers = {
       }
     }
    });
-   console.log('This is result', result);
    return result;
   },
 
   square: function(arr) {
-
+    return arr.map(element => {
+      return element * element
+    });
   },
 
   findAllOccurrences: function(arr, target) {
-
+    var occurences = [];
+    arr.forEach((element, index) => {
+      if(element === target) {
+        occurences.push(index);
+      }
+    });
+    return occurences;
   }
 };
