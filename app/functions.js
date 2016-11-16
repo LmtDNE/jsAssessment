@@ -20,11 +20,9 @@ exports.functionsAnswers = {
     const innerFunction = (val) => {
       return () => { return fn(val); };
     };
-
     for (let i = 0, len = arr.length; i < len; i++) {
-      ret.push(innerFunction(arr[i]));
+      cbList.push(innerFunction(arr[i]));
     }
-
     return cbList;
   },
 
